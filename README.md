@@ -1,14 +1,14 @@
 # Simulator Cleaner
 
-This is useful for developers who wish to without making many terminal requests either permanently delete or reset to their default settings multiple simulators at once.  
+This may be useful for developers who wish to without making many terminal requests either permanently delete or reset to their default settings multiple simulators at once.  
 
 
 
 ## What problem this script solves
 
-When a new device is created in Simulator, its default data is stored in a dedicated subdirectory in `CoreSimulator/Devices/`. This device directory has a default size, typically of 17MB. When this newly created device is opened by the user for the first time, this directory is then populated with 400MB - 1.5GB of data. As different applications are tested, the size of each device directory grows substantially.  
+When a new Simulator device is created, its default data is stored in a `CoreSimulator/Devices/` subdirectory. When this new device is opened for the first time, an extra 400MB - 1.5GB data is created. As different applications are tested, each device directory grows.  
   
-The common presumption is that one may reset a given simulator device by removing the data folder for a given simulator in the `CoreSimulator/Devices/` directory. Doing this renders the device unopenable from Simulator's `File > Open Simulator` menu.  
+The common presumption is that one may reset a given device by removing this data folder, but this renders the device unopenable from Simulator's `File > Open Simulator` menu.  
 
 This script copies the chosen device type's signature data, deletes the device and its data completely, and then uses that device type data to create a new one. Doing this manually is tedious.  
 
