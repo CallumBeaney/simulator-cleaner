@@ -6,13 +6,11 @@ This may be useful for developers who wish to without making many terminal reque
 
 ## What problem this script solves
 
-When a new Simulator device is created, its default data is stored in a `CoreSimulator/Devices/` subdirectory. When this new device is opened for the first time, an extra 400MB - 1.5GB data is created. As different applications are tested, each device directory grows.  
-  
-The common presumption is that one may reset a given device by removing this data folder, but this renders the device unopenable from Simulator's `File > Open Simulator` menu.  
+When a new Simulator device is created, its default data is stored in a `CoreSimulator/Devices/` subdirectory. When this new device is opened for the first time, an extra 400MB - 1.5GB data is created. As different applications are tested, each device directory grows. If you remove or clear this data folder, the device becomes unopenable from Simulator's `File > Open Simulator` menu.  
 
-This script copies the chosen device type's signature data, deletes the device and its data completely, and then uses that device type data to create a new one. Doing this manually is tedious.  
+The solution is to copy the chosen device type's signature data, delete the device completely, and then use that signature data to create a new device. Doing this manually is tedious.   
 
-__Important__: This code was written on and for an Aarch64 Mac M1. You may need to change the default directory or some OS-specific commands in the code before compiling.  
+__Important__: This code was written on and for an Aarch64 Mac M1. You may need to change the default directory or some OS-specific commands.    
 
 
 
@@ -34,15 +32,11 @@ Select devices to clean:
   ⬢ iPhone 12 Pro Max [iOS-17-5] -- 401M
 ‣ ⬢ iPhone 13 mini [iOS-17-5] -- 680M
 
-Deleting device data:
-  iPhone 12 Pro Max [iOS-17-5]...
-  iPhone 13 mini [iOS-17-5]...
-
 Would you like to recreate the device?
-This will restore the device in to its default state.
  (Y/n) n
 
-Device data cleared. 
+...
+
 New devices state:
   iPhone SE (3rd generation) [iOS-18-0] -- 17M
   iPhone 16 Pro Max [iOS-18-0] -- 3.4G
@@ -61,16 +55,11 @@ Select devices to clean:
   ⬡ iPad Air 13-inch (M2) [iOS-18-0] -- 17M
 ‣ ⬢ iPhone Xs [iOS-17-5] -- 457M
 
-Deleting device data:
-  iPhone Xs [iOS-17-5]...
 Would you like to recreate the device?
-This will restore the device in to its default state.
  (Y/n) y
 
-Recreating following devices:
-  iPhone Xs [iOS-17-5]...
+...
 
-Device data cleared. 
 New devices state:
   iPhone SE (3rd generation) [iOS-18-0] -- 17M
   iPhone 16 Pro Max [iOS-18-0] -- 3.4G
